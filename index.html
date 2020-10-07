@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="ticket.css">	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Slot Availability Checker</h1>
+	<br>
+	<p>Write a JavaScript function that takes a time slot (int), a length of job (int), a date
+		('YYYY-MM-DD') an array of availability e.g. [9, 10, 11, 12, 13, 14, 17] (see provided
+		JSON below) and returns whether a slot is AVAILABLE, UNAVAILABLE or FULL.</p>
+
+	<code>
+		function checkSlotAvailability (time, jobLength, date, availabilty) {
+			// your code here
+		   }
+		   checkSlotAvailability (9, 1, '2016-05-20', [9, 10, 14, 15, 16, 17]);
+		   // => AVAILABLE
+		   checkSlotAvailability (10, 1, '2016-05-20', [9, 10, 14, 15, 16, 17]);
+		   // => UNAVAILABLE
+		   checkSlotAvailability (11, 1, '2016-05-20', [9, 10, 14, 15, 16, 17]);
+		   // => FULL
+	</code>
+</body>
+	<script src="weekly-bus-ticket.js"></script>
+	<script src="bus-ticket-dom.js"></script>
+</body>
+</html>
