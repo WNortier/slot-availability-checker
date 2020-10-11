@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
+}
+
+.code {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.date {
+  height: 1.5rem;
+  width: 10rem;
+}
+
+.avail {
+  color: #229954;
+}
+
+.unavail {
+  color: #cb4335;
+}
+
+.full {
+  color: #17202a;
+}
+
+.date {
+  margin: 1rem;
+  height: 1.5rem;
+}
+
+.setting-block-test {
+  margin: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.test-btn {
+  width: 5rem;
+  height: 2rem;
+}
+
+.eyecolor {
+  color: #17202a;
+}
+
+.settings-content {
+  background: rgb(151, 189, 158);
+  background: linear-gradient(
+    90deg,
+    rgba(151, 189, 158, 1) 0%,
+    rgba(191, 191, 191, 1) 100%
+  );
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex;
+  height: 22rem;
+  width: 96%;
+  text-align: left;
+}
+
+.settings-text {
+  margin: 1rem;
+}
+
+.settings-btn {
+  margin: 1rem;
+  width: 10.2rem;
+}
+
+.settings-input {
+  margin: 1rem;
+  width: 9.7rem;
+  height: 1.2rem;
+}
+
+.flexbox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.setting-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #17202a;
+  border-radius: 0.2rem;
+  background: rgb(151, 189, 158);
+  background: linear-gradient(90deg, rgba(191, 191, 191, 1) 100%);
+}
+
+.list-item {
+  list-style: circle;
+  text-align: left;
+}
+
+.setting-blocks-container {
+  margin-top: 2rem;
+}
+
+.heading {
+  text-align: center;
+  font-style: italic;
+}
