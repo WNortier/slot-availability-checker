@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../styles/simple-grid.min.css" />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script
+      src="https://kit.fontawesome.com/3148583bca.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Slot Availability Checker</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 settings-content">
+          <h1>
+            Slot Availability Checker
+            <i class="far fa-eye eyecolor"></i>
+          </h1>
+          <h4>
+            Write a JavaScript function that takes:
+            <ol>
+              <li class="list-item">a time slot (int)</li>
+              <li class="list-item">a length of job (int)</li>
+              <li class="list-item">a date ('YYYY-MM-DD') &</li>
+              <li class="list-item">
+                an array of availability e.g. [9, 10, 11, 12, 13, 14, 17]
+              </li>
+            </ol>
+            The function should return whether a slot is
+            <span class="avail">AVAILABLE</span>,
+            <span class="unavail">UNAVAILABLE</span>
+            or <span class="full">FULL</span>.
+          </h4>
+        </div>
+      </div>
+      <div class="row col-12">
+        <div class="col-2"></div>
+        <div class="col-8 center">
+          <h5>
+            The widgets below are interconnected and use Javascript to calculate
+            a result based on input parameters. Together they make up the
+            mechanics for the Slot Availability Checker function.
+          </h5>
+        </div>
+        <div class="col-2"></div>
+      </div>
+      <hr />
+      <h3 class="heading">Variables</h3>
+      <div class="flexbox">
+        <h4>Date:</h4>
+        <input type="date" disabled value="2016-05-19" class="settings-input" />
+      </div>
+      <div class="row">
+        <div class="col-12 center">
+          <div class="col-6 center setting-block">
+            <h7 class="hidden">hidden</h7>
+            <h7
+              >2016-05-19 yields a travel time of<br />
+              2 since it falls on the same day</h7
+            >
+            <select class="date">
+              <option value="2016-05-17">2016-05-17</option>
+              <option value="2016-05-18">2016-05-18</option>
+              <option value="2016-05-19">2016-05-19</option>
+              <option value="2016-05-20">2016-05-20</option>
+              <option value="2016-05-21">2016-05-21</option>
+            </select>
+            <button class="settings-btn" id="calc-date-buffer">
+              Calculate Dates Buffer
+            </button>
+            <h4 class="settings-text">
+              Dates Buffer Result: <span id="dates-buffer-result"></span>
+            </h4>
+          </div>
+
+          <div class="col-6 center setting-block">
+            <h7 class="hidden">hidden</h7>
+            <h7
+              >9 & 17 yield a travel buffer of<br />
+              0 since they are the first & last slots</h7
+            >
+            <input
+              class="settings-input"
+              type="number"
+              id="timeslot"
+              placeholder="Enter Slot"
+            />
+            <button class="settings-btn" id="calc-times">
+              Calculate Times Buffer
+            </button>
+            <h4 class="settings-text">
+              Time Result: <span id="time-result"></span>
+            </h4>
+          </div>
+        </div>
+        <h3 class="heading">Factors - Full</h3>
+
+        <hr class="hr" />
+
+        <div class="row flexbox">
+          <div class="col-12 center">
+            <div class="col-6 center setting-block">
+              <h7 class="hidden">hidden</h7>
+              <h7
+                >Check if the input date exists <br />
+                e.g. 2016-05-17 yields FULL</h7
+              >
+              <input
+                class="settings-input"
+                type="number"
+                id="is-date-listed"
+                disabled
+                placeholder="Enter Date"
+              />
+              <button class="settings-btn" id="calc-is-date-listed">
+                Is Date Listed
+              </button>
+              <h4 class="settings-text">
+                Is Date Listed Result: <span id="is-date-listed-result"></span>
+              </h4>
+            </div>
+
+            <div class="col-6 center setting-block">
+              <h7 class="hidden">hidden</h7>
+              <h7
+                >Check if the selected timeslot is available<br />
+                on the selected date, e.g. 6 yields FULL</h7
+              >
+              <input
+                class="settings-input"
+                type="text"
+                id="availability"
+                placeholder="Enter Availability"
+                disabled
+              />
+              <button class="settings-btn" id="calc-is-slot-listed">
+                Is Slot Listed
+              </button>
+              <h4 class="settings-text">
+                Is Slot Listed Result: <span id="is-slot-listed-result"></span>
+              </h4>
+            </div>
+          </div>
+        </div>
+        <h3 class="heading">Factors - Unavailable</h3>
+
+        <hr class="hr" />
+
+        <div class="row flexbox">
+          <div class="col-12 center">
+            <div class="col-6 center setting-block">
+              <h7 class="hidden">hidden</h7>
+              <h7>Check if the job length exceeds <br />the timeslot length</h7>
+              <input
+                class="settings-input"
+                type="number"
+                id="jobLength"
+                placeholder="Enter Job Length"
+              />
+              <button class="settings-btn" id="calc-is-job-length">
+                Is JobLength > Timeslot
+              </button>
+              <h4 class="settings-text">
+                Joblength > Timeslot Result:
+                <span id="is-jobLength-greater-result"></span>
+              </h4>
+            </div>
+
+            <!-- <div class="col-6 center setting-block">
+              <input
+                class="settings-input"
+                type="text"
+                id="is-slot-listed"
+                placeholder="Enter Availability"
+                disabled
+              />
+              <button class="settings-btn" id="calc-is-slot-listed">
+                Is Slot Listed
+              </button>
+              <h4 class="settings-text">
+                Is Slot Listed Result: <span id="is-slot-listed-result"></span>
+              </h4>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./slot-checker.js"></script>
+    <script src="./slot-checker-dom.js"></script>
+  </body>
+</html>
