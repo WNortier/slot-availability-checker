@@ -89,6 +89,10 @@ body {
   justify-content: flex-start;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 .setting-block {
   display: flex;
   flex-direction: column;

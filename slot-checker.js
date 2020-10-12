@@ -27,6 +27,7 @@ function SlotChecker(inputData) {
   ];
 
   let availabilityData = inputData || availabilityDataObj;
+
   const helper = {
     availabilty: [9, 10, 14, 15, 16, 17],
     jobLength: 0,
@@ -40,9 +41,6 @@ function SlotChecker(inputData) {
     minimumJobLength: 1,
     currentDate: "2016-05-19T11:27:00",
     calcTimeRequired: (jobLength) => {
-      console.log(jobLength);
-      console.log(helper.travelBuffer);
-      console.log(helper.sameDateBuffer);
       helper.timeRequired =
         helper.travelBuffer + helper.sameDateBuffer + +jobLength;
       return helper.timeRequired;
@@ -56,7 +54,6 @@ function SlotChecker(inputData) {
       let year = date.getUTCFullYear();
       let month;
       let day;
-      // console.log(String(date.getMonth()).length);
 
       if (String(date.getMonth()).length === 1) {
         month = `0${date.getMonth() + 1}`;
@@ -92,11 +89,9 @@ function SlotChecker(inputData) {
       +time == availability[availability.length - 1]
     ) {
       helper.travelBuffer = 0;
-      console.log(helper.travelBuffer);
       return helper.travelBuffer;
     } else {
       helper.travelBuffer = 2;
-      console.log(helper.travelBuffer);
       return helper.travelBuffer;
     }
   };
@@ -107,10 +102,6 @@ function SlotChecker(inputData) {
     const availabilityDates = availabilityData.map((d) => {
       return d.Date;
     });
-
-    console.log(availabilityDates);
-    console.log(jobDateFormatted);
-    console.log(availabilityDates.includes(jobDateFormatted));
 
     if (
       availabilityDates == undefined ||
@@ -147,14 +138,10 @@ function SlotChecker(inputData) {
   ) => {
     handleSameDateBuffer(time, jobLength, date, availabilty);
     handleTravelBuffer(time, jobLength, date, availabilty);
-    // isDateListed(time, jobLength, date, availabilty);
-    // isSlotListed(time, jobLength, date, availabilty);
     helper.calcTimeRequired(jobLength);
 
     let timeslotLength = helper.calcTimeslotLength(time, availabilty);
 
-    console.log(helper.timeRequired);
-    console.log(timeslotLength);
     if (timeslotLength < helper.timeRequired) {
       return "UNAVAILABLE";
     } else {

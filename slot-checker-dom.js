@@ -1,6 +1,3 @@
-const testBtn = document.querySelector("#test");
-// var templateSource = document.querySelector(".generateTemplate").innerHTML;
-// var userTemplate = Handlebars.compile(templateSource);
 const calcTimesBtn = document.querySelector("#calc-times");
 const calcDateBuffer = document.querySelector("#calc-date-buffer");
 const calcIsDateListedBtn = document.querySelector("#calc-is-date-listed");
@@ -8,12 +5,10 @@ const calctimeslotBtn = document.querySelector("#calc-is-slot-listed");
 const calcIsJobLengthGreaterThanTimeslotBtn = document.querySelector(
   "#calc-is-job-length"
 );
-
 const timeslot = document.querySelector("#timeslot");
 const jobLength = document.querySelector("#jobLength");
 const date = document.querySelector(".date");
 const availability = document.querySelector("#availability");
-
 const datesBufferResult = document.querySelector("#dates-buffer-result");
 const timeResult = document.querySelector("#time-result");
 const isDateListedResult = document.querySelector("#is-date-listed-result");
@@ -23,12 +18,6 @@ const isJoblengthGreaterResult = document.querySelector(
 );
 const slotChecker = SlotChecker();
 
-testBtn.addEventListener("click", () => {
-  console.log(timeslot.value);
-  console.log(isDateListed.value);
-  console.log(date.value);
-  console.log(timeslot.value);
-});
 calcDateBuffer.addEventListener("click", () => {
   datesBufferResult.textContent = slotChecker.handleSameDateBuffer(
     timeslot.value,

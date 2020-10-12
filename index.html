@@ -43,20 +43,31 @@
           </h4>
         </div>
       </div>
-      <div class="row">
-        <div class="col-4">
-          <input type="date" class="settings-input" />
-          <button class="settings-btn" id="calc-dates">
-            Select Current Date
-          </button>
+      <div class="row col-12">
+        <div class="col-2"></div>
+        <div class="col-8 center">
+          <h5>
+            The widgets below use Javascript to calculate a result based on
+            input parameters. Together they make up the mechanics for the Slot
+            Availability Checker function.
+          </h5>
         </div>
+        <div class="col-2"></div>
       </div>
-      <h3 class="heading">Variables</h3>
       <hr />
-
+      <h3 class="heading">Variables</h3>
+      <div class="flexbox">
+        <h4>Date:</h4>
+        <input type="date" disabled value="2016-05-19" class="settings-input" />
+      </div>
       <div class="row">
         <div class="col-12 center">
           <div class="col-6 center setting-block">
+            <h7 class="hidden">hidden</h7>
+            <h7
+              >2016-05-19 yields a travel time of<br />
+              2 since it falls on the same day</h7
+            >
             <select class="date">
               <option value="2016-05-17">2016-05-17</option>
               <option value="2016-05-18">2016-05-18</option>
@@ -73,6 +84,11 @@
           </div>
 
           <div class="col-6 center setting-block">
+            <h7 class="hidden">hidden</h7>
+            <h7
+              >9 & 17 yield a travel buffer of<br />
+              0 since they are the first & last slots</h7
+            >
             <input
               class="settings-input"
               type="number"
@@ -94,6 +110,11 @@
         <div class="row flexbox">
           <div class="col-12 center">
             <div class="col-6 center setting-block">
+              <h7 class="hidden">hidden</h7>
+              <h7
+                >Check if the input date <br />
+                exists in our records</h7
+              >
               <input
                 class="settings-input"
                 type="number"
@@ -110,6 +131,11 @@
             </div>
 
             <div class="col-6 center setting-block">
+              <h7 class="hidden">hidden</h7>
+              <h7
+                >Check if the selected timeslot is <br />
+                available on the selected date</h7
+              >
               <input
                 class="settings-input"
                 type="text"
@@ -133,6 +159,8 @@
         <div class="row flexbox">
           <div class="col-12 center">
             <div class="col-6 center setting-block">
+              <h7 class="hidden">hidden</h7>
+              <h7>Check if the job length exceeds <br />the timeslot length</h7>
               <input
                 class="settings-input"
                 type="number"
@@ -165,13 +193,6 @@
             </div> -->
           </div>
         </div>
-      </div>
-
-      <div class="col-12 center setting-block-test">
-        <h4 class="settings-text">
-          Run the test below to check the values of the input
-        </h4>
-        <button class="test-btn" id="test">Test</button>
       </div>
     </div>
     <script src="./slot-checker.js"></script>
