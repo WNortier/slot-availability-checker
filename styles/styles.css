@@ -62,9 +62,9 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 22rem;
+  height: auto;
   width: 95%;
-  text-align: left;
+  text-align: center;
 }
 
 .spacer {
