@@ -25,6 +25,10 @@ body {
   color: #cb4335;
 }
 
+.function-btn {
+  margin: "1rem";
+}
+
 .full {
   color: #17202a;
 }
